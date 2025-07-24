@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.271090">
+  <PropertyGroup>
+    <StartupCommand>npm run dev</StartupCommand>
+    <JavaScriptTestRoot>src\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
+    <ShouldRunNpmInstall>false</ShouldRunNpmInstall>
+    <AssemblyName>DriveZone.Client</AssemblyName>
+    <RootNamespace>DriveZone.Client</RootNamespace>
+    <Product>DriveZone Premium Vehicle Rental Platform - Client</Product>
+    <Company>DriveZone</Company>
+    <Description>Premium vehicle rental platform frontend application</Description>
+    <Copyright>© 2024 DriveZone Platform. All rights reserved.</Copyright>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+</Project> 

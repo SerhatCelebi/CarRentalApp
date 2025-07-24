@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DriveZone'a Hoş Geldiniz!</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .header p {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+
+      .content {
+        padding: 40px 30px;
+      }
+
+      .welcome-message {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .welcome-message h2 {
+        color: #667eea;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .welcome-message p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.7;
+      }
+
+      .features {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 30px;
+        margin: 30px 0;
+      }
+
+      .features h3 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .feature-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .feature-item::before {
+        content: "✓";
+        color: #28a745;
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      .cta-section {
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 16px;
+        transition: transform 0.2s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .membership-info {
+        background-color: #e3f2fd;
+        border-left: 4px solid #2196f3;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .membership-info h4 {
+        color: #1976d2;
+        margin-bottom: 10px;
+      }
+
+      .membership-info p {
+        color: #555;
+        font-size: 14px;
+      }
+
+      .contact-info {
+        background-color: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 30px 0;
+      }
+
+      .contact-info h4 {
+        color: #856404;
+        margin-bottom: 15px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #856404;
+      }
+
+      .contact-item::before {
+        content: "📞";
+        margin-right: 10px;
+      }
+
+      .contact-item.email::before {
+        content: "📧";
+      }
+
+      .contact-item.web::before {
+        content: "🌐";
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .footer p {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-bottom: 10px;
+      }
+
+      .social-links {
+        margin: 20px 0;
+      }
+
+      .social-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+
+      .social-links a:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          margin: 0 10px;
+        }
+
+        .header,
+        .content {
+          padding: 20px;
+        }
+
+        .feature-list {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-button {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🚗 DriveZone</h1>
+        <p>Premium Araç Kiralama Platformu</p>
+      </div>
+
+      <div class="content">
+        <div class="welcome-message">
+          <h2>Hoş Geldiniz {{FirstName}}!</h2>
+          <p>
+            DriveZone ailesine katıldığınız için teşekkür ederiz. Artık premium
+            araç kiralama deneyiminin tüm avantajlarından yararlanabilirsiniz.
+          </p>
+        </div>
+
+        <div class="features">
+          <h3>DriveZone Avantajları</h3>
+          <div class="feature-list">
+            <div class="feature-item">Geniş araç filosu</div>
+            <div class="feature-item">7/24 müşteri desteği</div>
+            <div class="feature-item">Esnek kiralama seçenekleri</div>
+            <div class="feature-item">Loyalty puan sistemi</div>
+            <div class="feature-item">Mobil uygulama</div>
+            <div class="feature-item">Hızlı rezervasyon</div>
+            <div class="feature-item">Güvenli ödeme</div>
+            <div class="feature-item">Ücretsiz iptal</div>
+          </div>
+        </div>
+
+        <div class="membership-info">
+          <h4>🎖️ Üyelik Seviyeniz: {{MembershipLevel}}</h4>
+          <p>
+            Üyelik seviyenize göre özel indirimler ve avantajlardan
+            yararlanabilirsiniz. Daha fazla kiralama yaparak üst seviyelere
+            çıkabilir ve daha büyük avantajlar elde edebilirsiniz.
+          </p>
+        </div>
+
+        <div class="cta-section">
+          <a href="{{WebsiteUrl}}/available-vehicles" class="cta-button">
+            İlk Kiralamanızı Yapın
+          </a>
+        </div>
+
+        <div class="contact-info">
+          <h4>İletişim Bilgileri</h4>
+          <div class="contact-item">+90 (555) 123-4567</div>
+          <div class="contact-item email">support@drivezone.com</div>
+          <div class="contact-item web">www.drivezone.com</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>© 2024 DriveZone Platform. Tüm hakları saklıdır.</p>
+        <p>Bu e-posta {{Email}} adresine gönderilmiştir.</p>
+
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+
+        <p style="font-size: 12px; margin-top: 20px">
+          Bu e-postaları almak istemiyorsanız
+          <a href="{{UnsubscribeUrl}}" style="color: #ffc107">buradan</a>
+          abonelikten çıkabilirsiniz.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

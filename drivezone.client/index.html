@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DriveZone - Türkiye'nin En Güvenilir Premium Araç Kiralama Platformu" />
+    <meta name="keywords" content="araç kiralama, car rental, lüks araç, premium vehicle, DriveZone, Turkey" />
+    <meta name="author" content="DriveZone Team" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="DriveZone - Premium Araç Kiralama" />
+    <meta
+      property="og:description"
+      content="Türkiye'nin en güvenilir premium araç kiralama platformu. Lüks araçlarımızla konforlu yolculuklar."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://drivezone.com.tr" />
+    <meta property="og:image" content="/og-image.jpg" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DriveZone - Premium Araç Kiralama" />
+    <meta name="twitter:description" content="Türkiye'nin en güvenilir premium araç kiralama platformu." />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2C5282" />
+    <meta name="msapplication-TileColor" content="#2C5282" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" />
+
+    <title>DriveZone - Premium Araç Kiralama</title>
+
+    <!-- Critical CSS Inline -->
+    <style>
+      /* Critical CSS for faster rendering */
+      body {
+        font-family:
+          'Inter',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          'Roboto',
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Loading Screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 15px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Hide loading screen when app loads */
+      .app-loaded .loading-screen {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-spinner"></div>
+      <span>DriveZone Yükleniyor...</span>
+    </div>
+
+    <!-- React App Root -->
+    <div id="root"></div>
+
+    <!-- Vite Dev Script -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      // Hide loading screen when DOM is loaded
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => {
+              loadingScreen.style.display = 'none';
+              document.body.classList.add('app-loaded');
+            }, 500);
+          }
+        }, 1000);
+      });
+
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then(function (registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function (registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+
+      // App Performance Monitoring
+      window.addEventListener('load', function () {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart + 'ms');
+      });
+    </script>
+
+    <!-- Global Error Handler -->
+    <script>
+      window.addEventListener('error', function (e) {
+        console.error('Global Error:', e.error);
+      });
+
+      window.addEventListener('unhandledrejection', function (e) {
+        console.error('Unhandled Promise Rejection:', e.reason);
+      });
+    </script>
+  </body>
+</html>

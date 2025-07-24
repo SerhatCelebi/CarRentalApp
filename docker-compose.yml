@@ -1,0 +1,64 @@
+version: "3.8"
+
+services:
+  drivezone-api:
+    build:
+      context: .
+      dockerfile: DriveZone.Server/Dockerfile
+    container_name: drivezone-api
+    ports:
+      - "7042:443"
+      - "5042:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=DriveZone2024!
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/drivezone.pfx
+      - DefaultConnection=Server=drivezone-db;Database=DriveZoneDB;User Id=sa;Password=DriveZone2024!Secure;TrustServerCertificate=true;
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    depends_on:
+      - drivezone-db
+    networks:
+      - drivezone-network
+
+  drivezone-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: drivezone-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=DriveZone2024!Secure
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - drivezone_data:/var/opt/mssql
+    networks:
+      - drivezone-network
+
+  drivezone-client:
+    build:
+      context: ./drivezone.client
+      dockerfile: Dockerfile
+    container_name: drivezone-client
+    ports:
+      - "3000:80"
+    depends_on:
+      - drivezone-api
+    networks:
+      - drivezone-network
+
+volumes:
+  drivezone_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data
+
+networks:
+  drivezone-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
