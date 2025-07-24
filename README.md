@@ -9,7 +9,6 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.6-7952B3?logo=bootstrap)](https://getbootstrap.com/)
 [![Tailwind](https://img.shields.io/badge/Tailwind_CSS-4.0-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 **Enterprise-level vehicle rental platform with modern architecture and premium user experience**
 
@@ -39,7 +38,6 @@
 - **Dynamic Pricing**: Sezon ve talep bazlı fiyatlandırma
 - **Fleet Maintenance**: Predictive maintenance + IoT entegrasyonu
 - **Multi-location**: Çoklu şehir + havalimanı entegrasyonu
-- **7/24 Support**: Gerçek zamanlı müşteri desteği
 
 ## 📱 Screenshots
 
@@ -464,96 +462,3 @@ Proje şu anda İngilizce ve Türkçe desteklemektedir. Yeni diller eklemek içi
 - Unit tests yazın
 - Documentation güncelleyin
 - Code review süreci
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
-
-## 👥 Katkıda Bulunanlar
-
-- **Geliştirici**: [Your Name](https://github.com/yourusername)
-
-## 📞 İletişim
-
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- GitHub: [@yourusername](https://github.com/yourusername)
-
-## 🙏 Teşekkürler
-
-- ASP.NET Core team
-- React community
-- Bootstrap ve Tailwind CSS
-- Tüm açık kaynak katkıda bulunanlara
-
----
-
-## 🌟 DriveZone Premium Özellikleri
-
-### 💎 Üyelik Avantajları
-
-- **Bronze**: Temel kiralama + %5 loyalty points
-- **Silver**: %10 indirim + öncelikli destek
-- **Gold**: %15 indirim + ücretsiz sigorta yükseltmesi
-- **Platinum**: %20 indirim + VIP araç erişimi + concierge hizmet
-
-### 🔒 Güvenlik ve Doğrulama
-
-- **TC Kimlik Doğrulama**: Gerçek kimlik kontrolü
-- **Ehliyet Geçerlilik**: 3 ay geçerlilik kontrolü
-- **Güvenlik Deposu**: Araç kategorisine göre dinamik tutar
-- **Sigorta Kapsamı**: Kaza, hasar ve çalınma koruması
-
-### 📊 İş Zekası Özellikleri
-
-- **Dinamik Fiyatlandırma**: Sezon, talep ve araç tipine göre
-- **Predictive Analytics**: Müşteri davranış tahmini
-- **Revenue Optimization**: Kar maksimizasyonu algoritmaları
-- **Fleet Management**: Araç rotasyon ve bakım takibi
-
-### 🎨 Modern UI/UX
-
-- **Design System**: Custom CSS variables + Inter/Lexend fonts
-- **Color Palette**: Indigo/Purple/Cyan premium gradient'leri
-- **Animations**: Smooth transitions ve micro-interactions
-- **Responsive**: Mobile-first yaklaşım + PWA hazır
-
-## 🚀 Gelecek Geliştirmeler (Roadmap)
-
-### Phase 1: Core Platform ✅
-
-- [x] Premium vehicle management system
-- [x] Advanced booking engine with insurance
-- [x] Membership tier system
-- [x] Modern responsive UI
-
-### Phase 2: Smart Features 🚧
-
-- [ ] **AI-Powered Recommendations**: Müşteri tercihi bazlı araç önerisi
-- [ ] **IoT Integration**: Araç telematiği ve gerçek zamanlı takip
-- [ ] **Mobile App**: React Native ile iOS/Android uygulaması
-- [ ] **Real-time Chat**: Müşteri destek chat sistemi
-
-### Phase 3: Enterprise Features 📋
-
-- [ ] **Corporate Accounts**: Kurumsal müşteri yönetimi
-- [ ] **Fleet Analytics**: Detaylı raporlama ve dashboard
-- [ ] **API Marketplace**: Third-party entegrasyonlar
-- [ ] **Multi-language**: Çoklu dil desteği (EN, DE, FR)
-
-### Phase 4: Advanced Integrations 🔮
-
-- [ ] **Payment Gateway**: Stripe/PayPal entegrasyonu
-- [ ] **Email/SMS Notifications**: Otomatik bildirim sistemi
-- [ ] **Social Login**: Google/Facebook/Apple ID
-- [ ] **Blockchain Loyalty**: NFT tabanlı sadakat programı
-
----
-
-<div align="center">
-
-**🚗 Drive Premium, Drive DriveZone 🚗**
-
-Made with ❤️ by DriveZone Team
-
-</div>
