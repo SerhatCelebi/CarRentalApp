@@ -39,15 +39,7 @@
 - **Fleet Maintenance**: Predictive maintenance + IoT entegrasyonu
 - **Multi-location**: Çoklu şehir + havalimanı entegrasyonu
 
-## 📱 Screenshots
 
-<div align="center">
-  
-| Home Page | Vehicle Booking | Admin Dashboard |
-|-----------|-----------------|-----------------|
-| ![Home](screenshots/home.png) | ![Booking](screenshots/booking.png) | ![Admin](screenshots/admin.png) |
-
-</div>
 
 ## 🛠 Teknoloji Stack
 
@@ -455,9 +447,7 @@ Proje şu anda İngilizce ve Türkçe desteklemektedir. Yeni diller eklemek içi
 4. Branch'i push edin (`git push origin feature/amazing-feature`)
 5. Pull Request oluşturun
 
-### Development Guidelines
 
-- Clean code principles
 - SOLID principles
 - Unit tests yazın
 - Documentation güncelleyin
